@@ -25,7 +25,7 @@ document.getElementById('book-form').addEventListener('submit', async (e) => {
         });
 
         alert('Livro cadastrado com sucesso!');
-        window.location.href = 'list-book.html';
+        window.location.href = 'list-dados.html';
     } catch (error) {
         console.error('Erro ao cadastrar livro:', error);
         alert('Erro ao cadastrar livro. Tente novamente.');

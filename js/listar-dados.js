@@ -1,5 +1,8 @@
+// Adiciona um listener para o evento DOMContentLoaded para garantir que o DOM esteja pronto
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        // Obtém uma referência para a coleção 'livros'
+        const livrosRef = firebase.database().ref('livros');
         const snapshot = await livrosRef.once('value');
         const livrosData = snapshot.val();
         if (livrosData) {
@@ -19,7 +22,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 </td>
                     
                 `;
-
                 tbody.appendChild(newRow);
             });
         } else {
