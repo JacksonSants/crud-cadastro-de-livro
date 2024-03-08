@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+:root {
+    --color-background: #fffdf7;
+    --color-black: #242424;
+    --color-purple-700: #7B76F1;
+    --color-purple-900: #4f4caf;
+    --color-red-danger-700: #fb3026;
+    --color-red-danger-900: #b4322b;
+}
+
+.hidden {
+    display: none !important;
+}
+
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(45deg,
+            #000000,
+            #7B76F1);
+}
+
+.btn {
+    width: 100%;
+
+}
+
+.container {
+    width: 120vh;
+    background-color: white;
+    height: 700px;
+    border-radius: 20px;
+    display: flex;
+}
+
+.container .logo {
+    background: url('/img/bg_registration.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 90%;
+    height: 100%;
+}
+
+.container .logo .drop-filter {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.container .logo .drop-filter .logo-box h1 {
+    font-size: 30px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+.container .logo .drop-filter .logo-box .logo-img {
+    display: flex;
+    justify-content: center;
+}
+
+.container .logo .drop-filter .logo-box img {
+    width: 450px;
+}
+
+.container .logo .text-logo {
+    width: 100%;
+    color: var(--color-background);
+    text-align: center;
+}
+
+.container .logo .text-logo h2 {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/*Estilzaição form*/
+
+.container .form {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container .form .form-box {
+    width: 70%;
+    height: 80%;
+    padding: 20px 40px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .form .form-box .form-input{
+    width: 90%;
+    height: 100%;
+    padding: 20px 40px;
+    background-color: #7B76F1;
+    padding: 20px 10px;
+}
+
+.container .form .form-box .form-input .input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .form .form-box .form-input .input-box label,
+.container .form .form-box .form-input .input-box input{
+    width: 100%;
+    height: 30px;
+}
+
+.container .form .form-box .form-input .input-box label{
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    color: var();
+}
+
+.container .form .form-box .form-input .input-box input{
+    background: transparent;
+    border: none;
+    border-bottom: .5px solid var(--color-background);
+}
+
+
+
+
+
+

@@ -10,7 +10,7 @@ document.getElementById('book-form').addEventListener('submit', async (e) => {
     const isbn = document.getElementById('isbn').value;
 
     try {
-        const livroRef = firebase.database().ref('livros').push();
+        const livroRef = db.collection('livro');
         const livroKey = livroRef.key; 
         await livroRef.set({
             uid: livroKey, 

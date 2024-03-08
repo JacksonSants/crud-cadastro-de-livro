@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+function editarLivro(livroId) {
+    window.location.href = `editar-livro.html?id=${livroId}`;
+}
+
 function excluirLivro(key) {
     if (confirm("Tem certeza que deseja excluir este livro?")) {
         firebase.database().ref(`livros/${key}`).remove()
