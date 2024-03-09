@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+b {
+    font-family: 'Poppins Medium', sans-serif;
+}
+
 
 * {
     margin: 0;
@@ -13,6 +19,11 @@
     --color-black: #212121;
     --color-laranja-cleaar: #fdf1e6;
     --color-white: #ffffff;
+    --color-black: #242424;
+    --color-purple-700: #7B76F1;
+    --color-purple-900: #4f4caf;
+    --color-red-danger-700: #fb3026;
+    --color-red-danger-900: #b4322b;
 }
 
 body {
@@ -21,6 +32,56 @@ body {
     padding: 0;
 }
 
+b {
+    font-family: 'PoppinsMedium', 'Rubik', sans-serif;
+}
+
 .navbar {
     height: 150px;
+}
+
+.custom-navbar {
+    background-color: var(--color-laranja-cleaar);
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.collapse .nav-item a {
+    font-size: 20px!important;
+}
+
+
+.row {
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card img {
+    width: 200px;
+    text-align: center;
+}
+
+.buy {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.buy img {
+    width: 30px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: var(--color-laranja-cleaar);
 }
