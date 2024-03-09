@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/registration.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
     <title>Registration</title>
 </head>
 
 <body>
-    <div class="container hidden" id="login">
+    <div class="container" id="login">
         <div class="logo">
             <div class="drop-filter">
                 <div class="logo-box">
@@ -47,7 +49,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <input class="btn btn-danger" type="reset" value="Reset">
-                    <p>Ja possui conta?<a href="#" onclick="criarConta()"> Criar conta.</a>.</p>
+                    <p>Não possui conta?<a href="#" onclick="criarConta()"> Criar conta.</a>.</p>
 
                     <p>Entar com:</p>
 
@@ -61,7 +63,7 @@
 
     </div>
 
-    <div class="container" id="login">
+    <div class="container hidden" id="login">
         <div class="logo">
             <div class="drop-filter">
                 <div class="logo-box">
@@ -85,24 +87,24 @@
                 <form class="form-input">
                     <div class="input-box mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" id="emailLogin" aria-describedby="emailHelp"
+                        <input type="text" class="form-control" id="nameRegister" aria-describedby="emailHelp"
                             placeholder="Email...">
                     </div>
 
                     <div class="input-box mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp"
+                        <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp"
                             placeholder="Email...">
                     </div>
                     
                     <div class="input-box mb-3">
                         <label for="exampleInputPassword1" class="form-label">Senha...</label>
-                        <input type="password" class="form-control" id="passwordLogin" placeholder="Senha...">
+                        <input type="password" class="form-control" id="passwordRegister" placeholder="Senha...">
                     </div>
 
                     <div class="input-box mb-3">
                         <label for="exampleInputPassword1" class="form-label">Connfirmar-senha</label>
-                        <input type="password" class="form-control" id="passwordLogin" placeholder="Confirmar-senha...">
+                        <input type="password" class="form-control" id="confirmPasswordRegister" placeholder="Confirmar-senha...">
                     </div>
 
                     <div class="mb-3 form-check">
@@ -111,7 +113,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <input class="btn btn-danger" type="reset" value="Reset">
-                    <p>Ja possui conta?<a href="#" onclick="criarConta()"> Criar conta.</a>.</p>
+                    <p>Ja possui conta?<a href="#" onclick="entrarConta()"> Criar conta.</a>.</p>
 
                     <p>Entar com:</p>
 
@@ -125,7 +127,16 @@
 
     </div>
 
+    <script src="js/hidden.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>
+    <script src="js/firebase.js"></script>
 </body>
 
 </html>
