@@ -22,15 +22,21 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i> Home</a>
+            </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 Livro
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Livro</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-book-half"></i> Livro</a></li>
                 <li><a class="dropdown-item" href="#">Novo livro</a></li>
                 <li>
                   <hr class="dropdown-divider">
@@ -39,12 +45,12 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Favorito</a>
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-heart-fill"></i> Favorito</a>
             </li>
 
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Configuração</a>
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-gear-fill"></i> Configuração</a>
             </li>
           </ul>
 
@@ -52,77 +58,183 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-person-fill"></i> Perfil</a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </nav>
   </div>
 
-  <section class="cardapio" id="cardapio">
-
-    <div class="background-cardapio"></div>
-
-    <div class="container">
+  <section class="home" id="livros">
+    <div class="container ">
       <div class="row">
-        <div class="col-12 col-one text-center mb-5 wow fadeIn">
-          <h1 class="title">
-            <b>E-book</b>
-          </h1>
-        </div>
 
-        <div class="row" id="itensCard">
-          <div class="card" style="width: 22rem;">
-            <img src="img/livro/8-livros-para-voce-ficar-rico.jpg" class="mt-3 card-img-top mx-auto" alt="...">
+        <div class="card" style="width: 18rem;">
+          <img src="img/livro/a-arte-da-guerra.jpg" class="card-img-top mx-auto mt-3" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">A ARTE DA GUERRA</h5>
+            <p class="card-text">Autor: SUN TZU</p>
+            <p class="card-text">Edição: 26ª edição</p>
+            <p class="card-text">Editora: Record</p>
 
-            <div class="card-body">
-              <h5 class="card-title">8 LIVROS PARA VOCÊ FICAR RICO</h5>
-              <div class="star" style="width: 100%; display: flex; justify-content: center;">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              </div>
-              
-              <p class="card-text">Autor:</p>
-              <p class="card-text">Edição:</p>
-              <p class="card-text">Editora:</p>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-              <div class="buy">
-                <a href="#" class="btn btn-primary">Comprar</a>
-                <img src="img/cart-fill.svg" alt="">
-              </div>
+            <div class="buy">
+              <a href="#" class="btn btn-primary">Comprar</a>
+              <img src="img/heart-fill.svg" alt="">
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-one text-center wow fadeInUp">
-          <a id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()">
-            Ver mais
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
+
+  <section class="register-library hidden" id="livros">
+    <div class="container ">
       <div class="row">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="col mt-5">
+
+          <div class="container mt-5">
+
+            <h1>Cadastro de Livro</h1>
+
+            <form id="book-form">
+
+              <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Título do Livro">
+              </div>
+
+              <div class="form-group">
+                <label for="autor">Autor(es):</label>
+                <input type="text" class="form-control" id="autor" placeholder="Autor(es) do Livro" required>
+              </div>
+
+              <div class="form-group">
+                <label for="autor">Foto:</label>
+                <input type="file" class="form-control" id="img-file" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sinopse">Sinopse:</label>
+                <textarea class="form-control" id="sinopse" rows="3" placeholder="Sinopse do Livro" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="genero">Gênero:</label>
+                <input type="text" class="form-control" id="genero" placeholder="Gênero do Livro" required>
+              </div>
+
+              <div class="form-group">
+                <label for="preco">Preço:</label>
+                <input type="text" class="form-control" id="preco" placeholder="Preço do Livro" required>
+              </div>
+
+              <div class="form-group">
+                <label for="formato">Formato:</label>
+                <select class="form-control" id="formato" required>
+                  <option>Impresso</option>
+                  <option>Ebook</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="isbn">ISBN:</label>
+                <input type="number" class="form-control" id="isbn" placeholder="ISBN do Livro" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
       </div>
-  </footer>
+    </div>
+  </section>
+
+  <section class="favorite hidden" id="livros">
+    <div class="container ">
+      <div class="row">
+        <div class="col mt-5">
+
+          <div class="container mt-5">
+
+            <h1>Favoritos</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="configuracao hidden" id="livros">
+    <div class="container ">
+      <div class="row">
+        <div class="col mt-5">
+
+          <div class="container mt-5">
+
+            <h1>Configurações</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="profile hidden" id="livros">
+    <div class="container ">
+      <div class="row">
+        <div class="col mt-5">
+
+          <div class="container mt-5">
+
+            <h1>Perfil</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--Rodapé-->
+
+  <div class="container ">
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+    </footer>
+  </div>
 
 
 

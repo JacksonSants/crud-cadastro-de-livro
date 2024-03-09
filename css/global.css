@@ -16,15 +16,14 @@ b {
 
 :root {
     --color-background: #fffdf7;
+    --color-text-out: #90908e;
     --color-black: #212121;
-    --color-laranja-cleaar: #fdf1e6;
     --color-white: #ffffff;
-    --color-black: #242424;
     --color-purple-700: #7B76F1;
-    --color-purple-900: #4f4caf;
-    --color-red-danger-700: #fb3026;
-    --color-red-danger-900: #b4322b;
+    --color-red-danger-700: #fb3026
 }
+
+
 
 body {
     background-color: var(--color-background);
@@ -36,12 +35,18 @@ b {
     font-family: 'PoppinsMedium', 'Rubik', sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 .navbar {
     height: 150px;
+    position: absolute;
+    z-index: 1;
 }
 
 .custom-navbar {
-    background-color: var(--color-laranja-cleaar);
+    background-color: var(--color-background);
 }
 
 .navbar-brand img {
@@ -49,23 +54,28 @@ b {
 }
 
 .collapse .nav-item a {
-    font-size: 20px!important;
+    font-size: 20px !important;
 }
 
-
+.container {
+    background-color: var(--color-background);
+}
 .row {
     gap: 30px;
+    
 }
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .card img {
     width: 200px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .buy {
@@ -74,8 +84,23 @@ b {
     align-items: center;
     justify-content: space-between;
 }
-.buy img {
+
+.buy {
+    display: flex;
+    align-items: center;
+
+}
+
+.buy img{
     width: 30px;
+
+}
+
+.buy .car {
+    width: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer {
@@ -83,5 +108,5 @@ b {
     align-items: center;
     width: 100%;
     height: 200px;
-    background-color: var(--color-laranja-cleaar);
+    background-color: var(--color-background);
 }
