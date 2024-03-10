@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/registration.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
+
     <title>Registration</title>
 </head>
 
 <body>
-    <div class="container" id="login">
+    <div class="container hidden" id="login">
         <div class="logo">
             <div class="drop-filter">
                 <div class="logo-box">
@@ -20,13 +20,11 @@
                         <img src="img/logo-book.png" alt="logo">
                     </div>
                 </div>
-    
-    
+
                 <div class="text-logo">
                     <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</h2>
                 </div>
             </div>
-
         </div>
 
         <div class="form">
@@ -63,7 +61,7 @@
 
     </div>
 
-    <div class="container hidden" id="register">
+    <div class="container " id="register">
         <div class="logo">
             <div class="drop-filter">
                 <div class="logo-box">
@@ -72,8 +70,8 @@
                         <img src="img/logo-book.png" alt="logo">
                     </div>
                 </div>
-    
-    
+
+
                 <div class="text-logo">
                     <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</h2>
                 </div>
@@ -96,7 +94,7 @@
                         <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp"
                             placeholder="Email...">
                     </div>
-                    
+
                     <div class="input-box mb-3">
                         <label for="exampleInputPassword1" class="form-label">Senha...</label>
                         <input type="password" class="form-control" id="passwordRegister" placeholder="Senha...">
@@ -104,7 +102,8 @@
 
                     <div class="input-box mb-3">
                         <label for="exampleInputPassword1" class="form-label">Connfirmar-senha</label>
-                        <input type="password" class="form-control" id="confirmPasswordRegister" placeholder="Confirmar-senha...">
+                        <input type="password" class="form-control" id="confirmPasswordRegister"
+                            placeholder="Confirmar-senha...">
                     </div>
 
                     <div class="mb-3 form-check">
@@ -131,8 +130,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>

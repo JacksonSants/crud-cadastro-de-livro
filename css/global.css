@@ -49,8 +49,20 @@ b {
     background-color: var(--color-background);
 }
 
+.container-fluid {
+    display: flex;
+}
+
 .navbar-brand img {
     width: 100px;
+}
+
+.navbar-nav .perfil {
+    margin-left: 50px;
+}
+
+.navbar-nav {
+    gap: 10px;
 }
 
 .collapse .nav-item a {
@@ -60,16 +72,17 @@ b {
 .container {
     background-color: var(--color-background);
 }
+
 .row {
     gap: 30px;
-    
+
 }
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
 .card img {
@@ -91,7 +104,7 @@ b {
 
 }
 
-.buy img{
+.buy img {
     width: 30px;
 
 }
