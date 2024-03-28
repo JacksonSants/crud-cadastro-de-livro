@@ -33,12 +33,14 @@ function registerBook() {
 }
 
 function listBook() {
+    let list = document.getElementById('list-book');
     let home = document.getElementById('home-book');
     let register = document.getElementById('register-book');
     let footer = document.getElementById('footer');
     
-
-    home.classList.remove('hidden');
+    list.classList.remove('hidden');
+    home.classList.add('hidden');
     register.classList.add('hidden');
-    footer.classList.remove('hidden');
+    footer.classList.add('hidden');
+    listDataLibrary ()
 }

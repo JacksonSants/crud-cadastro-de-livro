@@ -118,7 +118,6 @@ document.addEventListener(`DOMContentLoaded`, function () {
     });
 });
 
-//Funcão de exclusão
 // Função para excluir um livro e sua foto associada
 function excluirLivro(livroId, fotoUrl) {
     // Excluir o documento do livro do Firestore
@@ -162,3 +161,80 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+//Funcao para listar inforções do banco
+//Função de listar
+document.addEventListener(`DOMContentLoaded`, function () {
+    
+    // Selecionar o elemento onde os cards serão exibidos
+    const cardLibrary = document.getElementById("card-library");
+    const livrosRef = db.collection('livro'); // Corrigindo para 'livrosRef'
+
+    // Limpar o conteúdo atual para evitar duplicatas
+    cardLibrary.innerHTML = '';
+
+    // Obter os dados dos livros do Firestore
+    livrosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const livro = doc.data(); // Dados do livro
+
+            // Construir o HTML para cada livro
+            const cardHTML = `
+                <div class="card" style="width: 18rem;">
+                    <img src="${livro.fotoUrl}" class="card-img-top mx-auto mt-3" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">${livro.titulo}</h5>
+
+                        <div class="buy">
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                            <img src="img/heart-fill.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Adicionar o HTML do card ao elemento pai
+            cardLibrary.innerHTML += cardHTML;
+        });
+    }).catch((error) => {
+        console.error("Erro ao obter os livros:", error);
+    });
+});
+
+function listDataLibrary() {
+    // Selecionar o elemento onde os dados serão exibidos
+    const dataLibrary = document.getElementById("listLibrary");
+    const livrosRef = db.collection('livro'); // Corrigindo para 'livrosRef'
+
+    // Limpar o conteúdo atual para evitar duplicatas
+    dataLibrary.innerHTML = '';
+
+    // Obter os dados dos livros do Firestore
+    livrosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const livro = doc.data(); // Dados do livro
+
+            // Construir o HTML para cada livro
+            const dataHTML = `
+                <tr>
+                    <td><img style='width: 100px;' src="${livro.fotoUrl}" alt="Foto do livro"></td>
+                    <td>${livro.titulo}</td>
+                    <td>${livro.autor}</td>
+                    <td>${livro.genero}</td> <!-- Corrigindo para 'genero' -->
+                    <td>${livro.preco}</td> <!-- Corrigindo para 'preco' -->
+                    <td>${livro.isbn}</td>
+                    <td>
+                        <button class='btn btn-primary'>Editar</button>
+                        <button class='btn btn-danger'>Excluir</button>
+                    </td>
+                </tr>
+            `;
+
+            // Adicionar o HTML da linha ao elemento pai
+            dataLibrary.innerHTML += dataHTML;
+        });
+    }).catch((error) => {
+        console.error("Erro ao obter os livros:", error);
+    });
+}
