@@ -118,52 +118,6 @@ document.addEventListener(`DOMContentLoaded`, function () {
     });
 });
 
-// Função para excluir um livro e sua foto associada
-function excluirLivro(livroId, fotoUrl) {
-    // Excluir o documento do livro do Firestore
-    db.collection('livro').doc(livroId).delete()
-        .then(() => {
-            console.log(`Livro com ID ${livroId} excluído com sucesso.`);
-            // Excluir a foto do armazenamento do Firebase
-            const fotoRef = storage.refFromURL(fotoUrl);
-            fotoRef.delete()
-                .then(() => {
-                    console.log(`Foto do livro com ID ${livroId} excluída com sucesso.`);
-                    alert("Livro e foto excluídos com sucesso.");
-                    // Atualizar a interface do usuário, se necessário
-                })
-                .catch((error) => {
-                    console.error(`Erro ao excluir a foto do livro com ID ${livroId}:`, error);
-                    alert("Erro ao excluir a foto do livro. Tente novamente.");
-                });
-        })
-        .catch((error) => {
-            console.error(`Erro ao excluir o livro com ID ${livroId}:`, error);
-            alert("Erro ao excluir o livro. Tente novamente.");
-        });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const cardLibrary = document.getElementById("card-library");
-
-    cardLibrary.addEventListener('click', function (event) {
-        // Verificar se o botão de exclusão foi clicado
-        if (event.target.classList.contains('btn-excluir-livro')) {
-            // Obter o ID do livro associado ao botão de exclusão
-            const livroId = event.target.dataset.livroId;
-            // Obter a URL da foto associada ao livro
-            const fotoUrl = event.target.dataset.fotoUrl;
-            // Confirmar a exclusão com o usuário antes de continuar
-            if (confirm("Tem certeza de que deseja excluir este livro?")) {
-                // Chamar a função para excluir o livro e sua foto
-                excluirLivro(livroId, fotoUrl);
-            }
-        }
-    });
-});
-
-
-//Funcao para listar inforções do banco
 //Função de listar
 document.addEventListener(`DOMContentLoaded`, function () {
     
@@ -226,7 +180,7 @@ function listDataLibrary() {
                     <td>${livro.isbn}</td>
                     <td>
                         <button class='btn btn-primary'>Editar</button>
-                        <button class='btn btn-danger'>Excluir</button>
+                        <button class='btn btn-danger btn-excluir-livro' data-livro-id="${doc.id}" data-foto-url="${livro.fotoUrl}">Excluir</button>
                     </td>
                 </tr>
             `;
@@ -237,4 +191,77 @@ function listDataLibrary() {
     }).catch((error) => {
         console.error("Erro ao obter os livros:", error);
     });
+}
+function listDataLibrary() {
+    // Selecionar o elemento onde os dados serão exibidos
+    const dataLibrary = document.getElementById("listLibrary");
+    const livrosRef = db.collection('livro'); // Corrigindo para 'livrosRef'
+
+    // Limpar o conteúdo atual para evitar duplicatas
+    dataLibrary.innerHTML = '';
+
+    // Obter os dados dos livros do Firestore
+    livrosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const livro = doc.data(); // Dados do livro
+
+            // Construir o HTML para cada livro
+            const dataHTML = `
+                <tr>
+                    <td><img style='width: 100px;' src="${livro.fotoUrl}" alt="Foto do livro"></td>
+                    <td>${livro.titulo}</td>
+                    <td>${livro.autor}</td>
+                    <td>${livro.genero}</td> <!-- Corrigindo para 'genero' -->
+                    <td>${livro.preco}</td> <!-- Corrigindo para 'preco' -->
+                    <td>${livro.isbn}</td>
+                    <td>
+                        <button class='btn btn-primary'>Editar</button>
+                        <button class='btn btn-danger btn-excluir-livro' data-livro-id="${doc.id}" data-foto-url="${livro.fotoUrl}">Excluir</button>
+                    </td>
+                </tr>
+            `;
+
+            // Adicionar o HTML da linha ao elemento pai
+            dataLibrary.innerHTML += dataHTML;
+        });
+
+        // Adicionar event listener para botões de exclusão
+        const btnsExcluir = document.querySelectorAll('.btn-excluir-livro');
+        btnsExcluir.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const livroId = this.getAttribute('data-livro-id');
+                const fotoUrl = this.getAttribute('data-foto-url');
+                if (confirm("Tem certeza de que deseja excluir este livro?")) {
+                    excluirLivro(livroId, fotoUrl);
+                }
+            });
+        });
+    }).catch((error) => {
+        console.error("Erro ao obter os livros:", error);
+    });
+}
+
+function excluirLivro(livroId, fotoUrl) {
+    // Excluir o documento do livro do Firestore
+    db.collection('livro').doc(livroId).delete()
+        .then(() => {
+            console.log(`Livro com ID ${livroId} excluído com sucesso.`);
+            // Excluir a foto do armazenamento do Firebase
+            const storageRef = firebase.storage().refFromURL(fotoUrl); // Corrigindo para usar firebase.storage()
+            storageRef.delete()
+                .then(() => {
+                    console.log(`Foto do livro com ID ${livroId} excluída com sucesso.`);
+                    alert("Livro e foto excluídos com sucesso.");
+                    window.location.reload();
+                    // Atualizar a interface do usuário, se necessário
+                })
+                .catch((error) => {
+                    console.error(`Erro ao excluir a foto do livro com ID ${livroId}:`, error);
+                    alert("Erro ao excluir a foto do livro. Tente novamente.");
+                });
+        })
+        .catch((error) => {
+            console.error(`Erro ao excluir o livro com ID ${livroId}:`, error);
+            alert("Erro ao excluir o livro. Tente novamente.");
+        });
 }
