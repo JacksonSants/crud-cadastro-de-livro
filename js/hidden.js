@@ -31,3 +31,14 @@ function registerBook() {
     register.classList.remove('hidden');
     footer.classList.add('hidden');
 }
+
+function listBook() {
+    let home = document.getElementById('home-book');
+    let register = document.getElementById('register-book');
+    let footer = document.getElementById('footer');
+    
+
+    home.classList.remove('hidden');
+    register.classList.add('hidden');
+    footer.classList.remove('hidden');
+}

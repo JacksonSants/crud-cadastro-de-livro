@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Houde E-book Livraria</title>
+    <title>E-book</title>
 </head>
 
 <body>
@@ -38,9 +38,8 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#" onclick="registerBook()">Novo livro</a></li>
+                <li><a class="dropdown-item" href="#" onclick="listBook()">Listar livros</a></li>
                 <li>
-                  <hr class="dropdown-divider">
-                </li>
               </ul>
             </li>
 
@@ -57,22 +56,8 @@
 
   <section class="home hidden" id="home-book">
     <div class="container ">
-      <div class="row">
-
-        <div class="card" style="width: 18rem;">
-          <img src="img/livro/a-arte-da-guerra.jpg" class="card-img-top mx-auto mt-3" alt="...">
-          <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">A ARTE DA GUERRA</h5>
-            <p class="card-text">Autor: SUN TZU</p>
-            <p class="card-text">Edição: 26ª edição</p>
-            <p class="card-text">Editora: Record</p>
-
-            <div class="buy">
-              <a href="#" class="btn btn-primary">Comprar</a>
-              <img src="img/heart-fill.svg" alt="">
-            </div>
-          </div>
-        </div>
+      <div class="row" id="card-library">
+        <!--Listar os livros aqui-->
 
       </div>
     </div>
@@ -145,6 +130,38 @@
     </div>
   </section>
 
+  <section class="list-library " id="register-book">
+    <div class="container ">
+      <div class="row">
+        <div class="col mt-5">
+
+          <div class="container mt-5" >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Foto</th>
+                  <th scope="col">Titulo</th>
+                  <th scope="col">Autor</th>
+                  <th scope="col">Gênero</th>
+                  <th scope="col">Gênero</th>
+                  <th scope="col">Preço</th>
+                  <th scope="col">ISBN</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="listLibrary">
+            <!--Listar livros danco de dados-->
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!--Rodapé-->
 
   <div class="container" id="footer">
@@ -173,6 +190,7 @@
   <script src="js/upload-livro.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  
   <script src="js/wow.min.js"></script>
   <script>new WOW().init();</script>
 
