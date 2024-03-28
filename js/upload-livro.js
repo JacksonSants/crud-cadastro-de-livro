@@ -178,7 +178,7 @@ function listDataLibrary() {
                     <td>${livro.genero}</td> <!-- Corrigindo para 'genero' -->
                     <td>${livro.preco}</td> <!-- Corrigindo para 'preco' -->
                     <td>${livro.isbn}</td>
-                    <td>
+                    <td style='display: flex; flex-direction: colunm;'>
                         <button class='btn btn-primary'>Editar</button>
                         <button class='btn btn-danger btn-excluir-livro' data-livro-id="${doc.id}" data-foto-url="${livro.fotoUrl}">Excluir</button>
                     </td>
@@ -192,6 +192,8 @@ function listDataLibrary() {
         console.error("Erro ao obter os livros:", error);
     });
 }
+
+//Listar todos os dados do banco
 function listDataLibrary() {
     // Selecionar o elemento onde os dados serão exibidos
     const dataLibrary = document.getElementById("listLibrary");
@@ -215,7 +217,7 @@ function listDataLibrary() {
                     <td>${livro.preco}</td> <!-- Corrigindo para 'preco' -->
                     <td>${livro.isbn}</td>
                     <td>
-                        <button class='btn btn-primary'>Editar</button>
+                        <button class='btn btn-primary' onclick='editDataLibrary()'>Editar</button>
                         <button class='btn btn-danger btn-excluir-livro' data-livro-id="${doc.id}" data-foto-url="${livro.fotoUrl}">Excluir</button>
                     </td>
                 </tr>
@@ -264,4 +266,149 @@ function excluirLivro(livroId, fotoUrl) {
             console.error(`Erro ao excluir o livro com ID ${livroId}:`, error);
             alert("Erro ao excluir o livro. Tente novamente.");
         });
+}
+//Listar todos os dados do banco
+function editDataLibrary() {
+    // Selecionar o elemento onde os dados serão exibidos
+    const dataLibrary = document.getElementById("listLibrary");
+    const livrosRef = db.collection('livro'); // Corrigindo para 'livrosRef'
+
+    // Limpar o conteúdo atual para evitar duplicatas
+    dataLibrary.innerHTML = '';
+
+    // Obter os dados dos livros do Firestore
+    livrosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const livro = doc.data(); // Dados do livro
+
+            // Construir o HTML para cada livro
+            const dataHTML = `
+            <form id="update-book-form-${doc.id}" data-livro-id="${doc.id}">
+
+                <div class="form-group">
+                    <label for="titulo-${doc.id}">Título:</label>
+                    <input type="text" class="form-control" id="titulo-${doc.id}" value='${livro.titulo}' placeholder="Título do Livro">
+                </div>
+
+                <div class="form-group">
+                    <label for="autor-${doc.id}">Autor(es):</label>
+                    <input type="text" class="form-control" id="autor-${doc.id}" value='${livro.autor}' placeholder="Autor(es) do Livro" required>
+                </div>
+
+                <div class="form-group">
+                    <img style='width: 80px;' src="${livro.fotoUrl}">
+                    <label for="img-file-${doc.id}">Foto atual, selecione a nova:</label>
+                    <input type="file" class="form-control" id="img-file-${doc.id}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sinopse-${doc.id}">Sinopse:</label>
+                    <textarea class="form-control" id="sinopse-${doc.id}" rows="3" placeholder="Sinopse do Livro" required>${livro.sinopse}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="genero-${doc.id}">Gênero:</label>
+                    <input type="text" class="form-control" id="genero-${doc.id}" value='${livro.genero}'placeholder="Gênero do Livro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preco-${doc.id}">Preço:</label>
+                    <input type="text" class="form-control" id="preco-${doc.id}" placeholder="Preço do Livro" value='${livro.preco}' required>
+                </div>
+
+                <div class="form-group">
+                    <label for="formato-${doc.id}">Formato:</label>
+                    <select class="form-control" id="formato-${doc.id}" required>
+                        <option>Impresso</option>
+                        <option>Ebook</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="isbn-${doc.id}">ISBN:</label>
+                    <input type="number" class="form-control" id="isbn-${doc.id}" placeholder="ISBN do Livro" value='${livro.isbn}' required>
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick='updateData("${doc.id}")'>Atualizar</button>
+
+            </form>
+            `;
+
+            // Adicionar o HTML da linha ao elemento pai
+            dataLibrary.innerHTML += dataHTML;
+        });
+
+    }).catch((error) => {
+        console.error("Erro ao obter os livros:", error);
+    });
+}
+
+function updateData(livroId) { // Recebe o livroId como parâmetro
+    // Obtenha os novos valores dos campos do formulário
+    const titulo = document.getElementById(`titulo-${livroId}`).value;
+    const autor = document.getElementById(`autor-${livroId}`).value;
+    const sinopse = document.getElementById(`sinopse-${livroId}`).value;
+    const genero = document.getElementById(`genero-${livroId}`).value;
+    const preco = document.getElementById(`preco-${livroId}`).value;
+    const formato = document.getElementById(`formato-${livroId}`).value;
+    const isbn = document.getElementById(`isbn-${livroId}`).value;
+    const foto = document.getElementById(`img-file-${livroId}`).files[0]; // Obtenha o novo arquivo de imagem selecionado, se houver
+
+    try {
+        // Atualize os dados do livro no Firestore
+        db.collection('livro').doc(livroId).update({
+            titulo: titulo,
+            autor: autor,
+            sinopse: sinopse,
+            genero: genero,
+            preco: preco,
+            formato: formato,
+            isbn: isbn
+        })
+        .then(() => {
+            console.log("Livro atualizado com sucesso.");
+            // Se uma nova foto foi selecionada, chame a função para fazer upload da nova foto
+            if (foto) {
+                uploadAndLinkPhotoToLivro(livroId, foto);
+            } else {
+                alert("Livro atualizado com sucesso.");
+            }
+        })
+        .catch((error) => {
+            console.error("Erro ao atualizar livro:", error);
+            alert("Erro ao atualizar livro. Tente novamente.");
+        });
+    } catch (error) {
+        console.error("Erro ao atualizar livro:", error);
+        alert("Erro ao atualizar livro. Tente novamente.");
+    }
+}
+
+// Função para fazer upload da nova foto e atualizar a URL da foto no Firestore
+function updatePhoto(livroId, foto) {
+    return new Promise((resolve, reject) => {
+        if (!foto) {
+            reject('Nenhuma foto selecionada');
+            return;
+        }
+
+        const fotoRef = storageRef.child(`livros/${livroId}_${foto.name}`); // Adiciona o ID do livro ao nome da foto
+
+        fotoRef.put(foto)
+            .then((snapshot) => {
+                return snapshot.ref.getDownloadURL();
+            })
+            .then((imageUrl) => {
+                // Atualiza o documento do livro com a URL da nova foto
+                return db.collection('livro').doc(livroId).update({ fotoUrl: imageUrl });
+            })
+            .then(() => {
+                console.log('Foto atualizada com sucesso.');
+                resolve();
+            })
+            .catch((error) => {
+                console.error('Erro ao fazer upload da foto:', error);
+                reject(error);
+            });
+    });
 }
