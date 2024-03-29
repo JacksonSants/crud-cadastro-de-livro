@@ -126,6 +126,21 @@ b {
     object-fit: cover; /* Garante que a imagem se ajuste ao círculo */
 }
 
+.container .row .navbar-nav{
+    margin-left: 30%;
+}
+
+.navbar-nav .nav-item a {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.container .row .navbar-nav .nav-bottom{
+    width: 40%;
+    border-bottom: 1px solid var(--color-black);
+}
+/*Final perfil*/
+
 
 .footer {
     display: flex;
