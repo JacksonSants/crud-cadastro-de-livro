@@ -49,6 +49,7 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
     }
 });
 
+//Cadastrar foto
 function uploadAndLinkPhotoToLivro(livroId, foto) {
     return new Promise((resolve, reject) => {
         if (!foto) {
@@ -79,10 +80,10 @@ function uploadAndLinkPhotoToLivro(livroId, foto) {
             });
     });
 }
+/*Fim do cadastro */
 
 //Função de listar
-document.addEventListener(`DOMContentLoaded`, function () {
-    
+function contentBook() {
     // Selecionar o elemento onde os cards serão exibidos
     const cardLibrary = document.getElementById("card-library");
     const livrosRef = db.collection('livro'); // Corrigindo para 'livrosRef'
@@ -116,45 +117,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
     }).catch((error) => {
         console.error("Erro ao obter os livros:", error);
     });
-});
+}
 
-//Função de listar
-document.addEventListener(`DOMContentLoaded`, function () {
-    
-    // Selecionar o elemento onde os cards serão exibidos
-    const cardLibrary = document.getElementById("card-library");
-    const livrosRef = db.collection('livro'); // Corrigindo para 'livrosRef'
-
-    // Limpar o conteúdo atual para evitar duplicatas
-    cardLibrary.innerHTML = '';
-
-    // Obter os dados dos livros do Firestore
-    livrosRef.get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            const livro = doc.data(); // Dados do livro
-
-            // Construir o HTML para cada livro
-            const cardHTML = `
-                <div class="card" style="width: 18rem;">
-                    <img src="${livro.fotoUrl}" class="card-img-top mx-auto mt-3" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" style="text-align: center;">${livro.titulo}</h5>
-
-                        <div class="buy">
-                            <a href="#" class="btn btn-primary">Comprar</a>
-                            <img src="img/heart-fill.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            // Adicionar o HTML do card ao elemento pai
-            cardLibrary.innerHTML += cardHTML;
-        });
-    }).catch((error) => {
-        console.error("Erro ao obter os livros:", error);
-    });
-});
 
 function listDataLibrary() {
     // Selecionar o elemento onde os dados serão exibidos
@@ -178,7 +142,7 @@ function listDataLibrary() {
                     <td>${livro.genero}</td> <!-- Corrigindo para 'genero' -->
                     <td>${livro.preco}</td> <!-- Corrigindo para 'preco' -->
                     <td>${livro.isbn}</td>
-                    <td style='display: flex; flex-direction: colunm;'>
+                    <td class="d-flex align-items">
                         <button class='btn btn-primary'>Editar</button>
                         <button class='btn btn-danger btn-excluir-livro' data-livro-id="${doc.id}" data-foto-url="${livro.fotoUrl}">Excluir</button>
                     </td>
