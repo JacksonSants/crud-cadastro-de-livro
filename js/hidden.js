@@ -1,5 +1,6 @@
 document.addEventListener(`DOMContentLoaded`, function() {
     contentBook();
+    homeBook();
     verificarAutenticacao()
     
 });
@@ -29,7 +30,7 @@ function homeBook() {
 
     home.classList.remove('hidden');
     register.classList.add('hidden');
-    footer.classList.remove('hidden');
+    footer.classList.add('hidden');
     list.classList.add('hidden');
     perfil.classList.add('hidden');
 }

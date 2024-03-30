@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 
 * {
@@ -11,19 +9,19 @@
 }
 
 :root {
-    --color-background: #fffdf7;
+    --color-background: #1e192c;
     --color-white: #ffffff;
     --color-black: #212121;
     --color-violet-300: #2e1065;
-    --color-violet-200: #a78bfa;
-    --color-azul-100: #bae6fd;
+    --color-violet-200: #754ef9;
+    --color-azul-100: #0b051f;
 }
 
 
 
 html, body {
     font-family: 'PoppinsRegular', 'Rubik', sans-serif;
-    background-color: var(--color-background);
+    background-color: var(--color-background)!important;
     color: var(--color-text);
     width: 100%;
     height: 100vh;
@@ -44,7 +42,7 @@ b {
 
 }
 
-a.navbar-brand {
+.navbar-brand {
     margin-left: -25px;
 }
 
@@ -60,6 +58,7 @@ a.navbar-brand {
 }
 
 .custom-navbar {
+    background-color: var(--color-azul-100);
 }
 
 .container-fluid {
@@ -81,14 +80,54 @@ a.navbar-brand {
 .collapse .nav-item a {
     font-size: 20px !important;
     cursor: pointer;
+    color: var(--color-white)!important;
+}
+
+.collapse .search-fluid .search button {
+    background-color: var(--color-violet-200)!important;
+    color: var(--color-white);
+}
+
+.navbar-nav .search-fluid .dropdown-menu {
+    background-color: black;
+    color: white; /* Cor do texto */
 }
 
 /*Seção de banner*/
+
+.container .banner h1{
+    font-size: 30px;
+    text-align: justify;
+    margin-right: 50px;
+    padding: 10px;
+    color: var(--color-violet-200);
+}
+
+.container .banner b{
+    color: var(--color-white);
+}
 
 .container .banner p{
     text-align: justify;
     margin-right: 50px;
     padding: 10px;
+    color: var(--color-white);
+}
+
+.container .banner .btn-system{
+    width: 300px;
+    background-color: var(--color-violet-200);
+}
+
+.container .banner .rede-social a{
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    margin-right: 20px;
+}
+
+.container .banner .rede-social a:hover{
+    background-color: var(--color-white);
+    color: var(--color-azul-100);
 }
 
 .container .banner .img-banner img{
@@ -97,11 +136,15 @@ a.navbar-brand {
 
 /*Seção de banner*/
 
+/*Seção de cards de livro*/
+
 .container .text-title {
     text-align: center;
     font-size: 40px;
     margin-bottom: 60px;
+    color: var(--color-white);
 }
+
 
 .row {
     gap: 30px;
@@ -113,7 +156,7 @@ a.navbar-brand {
     flex-direction: column;
     justify-content: center;
     border: none!important;
-    background-color: var(--color-violet-100)!important;
+    background-color: var(--color-azul-100)!important;
     box-shadow: 0px 10px 15px 5px rgba(0,0,0,0.1);
 
 }
@@ -121,6 +164,7 @@ a.navbar-brand {
 .card .card-title {
     font-size: 15px;
     padding: 0!important;
+    color: var(--color-white);
 }
 
 .card img {
@@ -133,6 +177,43 @@ a.navbar-brand {
 .card .card-body .card-title {
     text-align: center;
 }
+/*Fim seção de cards de livro*/
+
+/*Seção de serviços*/
+.servico .container .container .card-servico {
+    background-color: var(--color-azul-100);
+    border-radius: 20px;
+}
+
+.card-servico {
+    padding: 10px;
+}
+
+.card-servico img {
+    width: 40px;
+}
+.card-servico h5 {
+    color: var(--color-white);
+}
+.card-servico p {
+    width: 100%;
+    text-align: justify;
+    color: var(--color-white);
+    border-bottom: 2px solid var(--color-violet-200);
+    border-top: 2px solid var(--color-violet-200);
+    padding: 5px;
+}
+
+.card-servico a{
+    background-color: var(--color-violet-200);
+}
+
+.card-servico a:hover{
+    color: var(--color-black);
+}
+/*Fim da seção de serviços*/
+
+
 /*perfil*/
 .container .profile img {
     width: 300px;
@@ -162,6 +243,10 @@ a.navbar-brand {
     justify-content: space-evenly;
 }
 
+.container-rodape {
+    background-color: var(--color-azul-100);
+}
+
 .container .footer .footer-rodape .footer-menu {
     margin-top: 20px;
     padding: 10px;
@@ -171,11 +256,11 @@ a.navbar-brand {
 .container .footer .footer-rodape .footer-menu a {
     text-decoration: none;
     font-size: 20px;
-    color: var(--color-black);
+    color: var(--color-white)
 }
 
 .container .footer .footer-rodape .footer-bar {
-    border-right: 1px solid var(--color-black);
+    border-right: 1px solid var(--color-white);
     padding-right: 70px;
 }
 
