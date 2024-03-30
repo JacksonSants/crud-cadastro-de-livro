@@ -14,8 +14,7 @@
 :root {
     --color-background: #fffdf7;
     --color-black: #242424;
-    --color-purple-700: #7B76F1;
-    --color-purple-900: #4f4caf;
+    --color-purple-700: #40B59F;
     --color-red-danger-700: #fb3026;
     --color-red-danger-900: #b4322b;
     --color-white: #ffffff;
@@ -32,7 +31,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #cecdfb;
+    background-image: linear-gradient(
+        45deg,
+        var(--color-purple-700),
+        var(--color-white)
+    );
 
 }
 
@@ -47,6 +50,8 @@ body {
     height: 700px;
     border-radius: 20px;
     display: flex;
+    padding: 0!important;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .container .logo {
@@ -95,7 +100,7 @@ body {
 }
 
 .container .logo .text-logo h2 {
-    font-size: 20px;
+    font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -126,7 +131,7 @@ body {
 }
 
 .container .form .form-box .form-input {
-    width: 90%;
+    width: 80%;
     height: 100%;
     padding: 20px 40px;
     padding: 20px 10px;
@@ -140,7 +145,7 @@ body {
 .container .form .form-box .form-input .input-box label,
 .container .form .form-box .form-input .input-box input {
     width: 100%;
-    height: 30px;
+    height: 20px;
 
 
 }
@@ -184,7 +189,7 @@ body {
 }
 
 .container .form .form-box .form-input .btn-primary {
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: var(--color-purple-700);
     color: var(--color-white);
 }
