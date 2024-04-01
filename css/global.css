@@ -31,11 +31,9 @@ b {
     font-family: 'PoppinsMedium', 'Rubik', sans-serif;
 }
 
-
 .hidden {
     display: none!important;
 }
-
 
 .navbar .botom{
     margin-right: 29px;
@@ -65,8 +63,9 @@ b {
     display: flex;
 }
 
-.navbar-brand img {
+.container-fluid .navbar-brand img {
     width: 100px;
+    margin-left: 50px;
 }
 
 .navbar-nav .perfil {
@@ -88,9 +87,18 @@ b {
     color: var(--color-white);
 }
 
-.navbar-nav .search-fluid .dropdown-menu {
+.navbar-nav .dropdown-menu {
     background-color: black;
-    color: white; /* Cor do texto */
+    color: var(--color-white); /* Cor do texto */
+}
+
+
+.container-fluid .search-fluid a {
+    background-color: var(--color-violet-200);
+}
+
+.search-fluid .profile a {
+    background-color: var(--color-black);
 }
 
 /*Seção de banner*/
@@ -215,21 +223,16 @@ b {
 
 
 /*perfil*/
-.container .profile img {
-    width: 300px;
-    height: 300px; /* Definindo a altura igual à largura para criar um círculo */
-    border-radius: 50%; /* Define a borda como um círculo */
-    object-fit: cover; /* Garante que a imagem se ajuste ao círculo */
+.perfil-user .container h2 {
+    color: var(--color-white);
 }
 
-.container .row .navbar-nav{
-    margin-left: 30%;
+.perfil-user .container .navbar-nav .nav-item {
+    color: var(--color-white);
 }
 
-.navbar-nav .nav-item a {
-    font-size: 20px;
-    font-weight: 600;
-}
+/*Fim perfil*/
+
 
 .container .row .navbar-nav .nav-bottom{
     width: 40%;

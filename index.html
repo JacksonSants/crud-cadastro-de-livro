@@ -41,7 +41,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" > Meu lvros</a>
+                <a class="nav-link active" aria-current="page"> Meu lvros</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -50,24 +50,24 @@
                   Livro
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item"  onclick="registerBook()">Novo livro</a></li>
+                  <li><a class="dropdown-item" onclick="registerBook()">Novo livro</a></li>
 
-                  <li><a class="dropdown-item"  onclick="listBook()">Listar livros</a></li>
+                  <li><a class="dropdown-item" onclick="listBook()">Listar livros</a></li>
                   <li>
                 </ul>
               </li>
 
             </ul>
 
-            <div class="search-fluid d-flex gap-3">
+            <div class="search-fluid search-fluid-user d-flex gap-3">
               <form class="search d-flex ml-3" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="  btn btn-outline-success" type="submit">Search</button>
               </form>
 
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-3">
+              <ul class="navbar-nav profile me-auto mb-2 mb-lg-0 ml-3">
                 <li class="nav-item" onclick="perfil()">
-                  <a class="nav-link active" aria-current="page"><i class="bi bi-person-fill"></i> Perfil</a>
+                  <a class="nav-link active" aria-current="page"><i class="bi bi-person-fill"></i>Perfil</a>
                 </li>
               </ul>
             </div>
@@ -78,7 +78,7 @@
     </div>
   </section>
 
-  <section class="banner-fluid mt-5">
+  <section class="banner-fluid mt-5" id="banner">
     <div class="container">
       <div class="banner d-flex">
         <div class="col-12 col-lg-6 col-md-6 d-flex flex-column">
@@ -88,10 +88,13 @@
             <p class="wow fadeInLeft delay-02s text-justify">
               Aproveite nossas novas coleções.
               Encontre as últimas tendências literárias, clássicos atemporais e muito mais em nossa biblioteca online.
-              Descubra uma vasta seleção de livros de todos os gêneros e estilos, desde clássicos atemporais até os maisrecentes best-sellers, explore nossa biblioteca online e mergulhe em mundos fascinantes, inspire-se com histórias envolventes e expanda seus horizontes literários.Compre com confiança, sabendo que cada livro é cuidadosamente selecionado para proporcionar a melhorexperiência de leitura possível.
+              Descubra uma vasta seleção de livros de todos os gêneros e estilos, desde clássicos atemporais até os
+              maisrecentes best-sellers, explore nossa biblioteca online e mergulhe em mundos fascinantes, inspire-se
+              com histórias envolventes e expanda seus horizontes literários.Compre com confiança, sabendo que cada
+              livro é cuidadosamente selecionado para proporcionar a melhorexperiência de leitura possível.
             </p>
 
-            <a href="" class="btn-system btn btn-primary"> Ir para o site</a>
+            <a href="" class="btn-system btn btn-primary"> Ir para a loja</a>
 
           </div>
           <div class="rede-social p-3">
@@ -101,7 +104,7 @@
               </span>
               (92) 8492-2204
             </a>
-            
+
             <a href="#" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3 wow fadeIn delay-05s">
               <i class="bi bi-instagram"></i>
             </a>
@@ -140,7 +143,7 @@
     </div>
   </section>
 
-  <section class="servico mt-3" id="servico">
+  <section class="servico mt-5" id="servico">
     <div class="container ">
       <div class="text-title mt-3">
         <h1 class="wow fadeInLeft"><b>Serviços</b>
@@ -149,27 +152,30 @@
 
       <div class="container text-center">
         <div class="row gap-5">
-            <div class="card-servico col d-flex flex-column align-items-center p-5">
-                <img src="img/lightning-fill.png" alt="" class="img-fluid">
-                <h5 class="mb-2 mt-2"><b>Acesso Rápido</b></h5>
-                <p>Pesquise e encontre livros facilmente usando nossos recursos avançados de pesquisa e navegação. Filtrar por gênero, autor ou palavras-chave para encontrar exatamente o que você está procurando.</p>
-                <a class="btn btn-primary">Ler mais...</a>
-            </div>
-            <div class="card-servico col d-flex flex-column align-items-center p-5">
-                <img src="img/clock.png" alt="" class="img-fluid">
-                <h5 class="mb-2 mt-2"><b>Recomendações Personalizadas</b></h5>
-                <p>Receba recomendações de livros com base em seus interesses e histórico de leitura. Descubra novos títulos que você pode gostar.</p>
-                <a class="btn btn-primary">Ler mais...</a>
-            </div>
-            <div class="card-servico col d-flex flex-column align-items-center p-5">
-                <img src="img/analysis.png" alt="" class="img-fluid">
-                <h5 class="mb-2 mt-2"><b>Facilidade de navegação</b></h5>
-                <p>Explore nossa vasta coleção de livros a qualquer momento e em qualquer lugar. Não há necessidade de esperar ou se deslocar até uma biblioteca física.</p>
-                <a class="btn btn-primary">Ler mais...</a>
-            </div>
+          <div class="card-servico col d-flex flex-column align-items-center p-5">
+            <img src="img/lightning-fill.png" alt="" class="img-fluid">
+            <h5 class="mb-2 mt-2"><b>Acesso Rápido</b></h5>
+            <p>Pesquise e encontre livros facilmente usando nossos recursos avançados de pesquisa e navegação. Filtrar
+              por gênero, autor ou palavras-chave para encontrar exatamente o que você está procurando.</p>
+            <a class="btn btn-primary">Ler mais...</a>
+          </div>
+          <div class="card-servico col d-flex flex-column align-items-center p-5">
+            <img src="img/clock.png" alt="" class="img-fluid">
+            <h5 class="mb-2 mt-2"><b>Recomendações Personalizadas</b></h5>
+            <p>Receba recomendações de livros com base em seus interesses e histórico de leitura. Descubra novos títulos
+              que você pode gostar.</p>
+            <a class="btn btn-primary">Ler mais...</a>
+          </div>
+          <div class="card-servico col d-flex flex-column align-items-center p-5">
+            <img src="img/analysis.png" alt="" class="img-fluid">
+            <h5 class="mb-2 mt-2"><b>Facilidade de navegação</b></h5>
+            <p>Explore nossa vasta coleção de livros a qualquer momento e em qualquer lugar. Não há necessidade de
+              esperar ou se deslocar até uma biblioteca física.</p>
+            <a class="btn btn-primary">Ler mais...</a>
+          </div>
         </div>
-    </div>
-    
+      </div>
+
 
     </div>
   </section>
@@ -272,44 +278,42 @@
     </div>
   </section>
 
-  <section class="perfil hidden" id="perfil">
-    <div class="container">
-      <div class="row">
-        <h2 class="text-center">Perfil</h2>
-        <div class="d-flex justify-content-center" id="userPerfil">
-
-        </div>
-
-        <ul class="navbar-nav">
-
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-card-list"></i> Histórico</a>
-          </li>
-
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bookmarks"></i> Favoritos</a>
-          </li>
-
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-person-fill"></i> Notificaçóes</a>
-          </li>
-
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bell"></i> Notificações</a>
-          </li>
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-gear"></i> Configurações</a>
-          </li>
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-question"></i> Suporte</a>
-          </li>
-          <li class="nav-item nav-bottom">
-            <a class="nav-link active" aria-current="page" href="registration.html"><i class="bi bi-box-arrow-left"></i>
-              Logout</a>
-          </li>
-        </ul>
+  <section class="perfil-user hidden" id="perfil">
+    <div class="container mt-5">
+      <h2 class="text-center">Perfil</h2>
+      <div class="d-flex justify-content-center" id="userPerfil">
 
       </div>
+
+      <ul class="navbar-nav">
+
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-card-list"></i> Histórico</a>
+        </li>
+
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bookmarks"></i> Favoritos</a>
+        </li>
+
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-person-fill"></i> Notificaçóes</a>
+        </li>
+
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bell"></i> Notificações</a>
+        </li>
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-gear"></i> Configurações</a>
+        </li>
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-question"></i> Suporte</a>
+        </li>
+        <li class="nav-item nav-bottom">
+          <a class="nav-link active" aria-current="page" href="registration.html"><i class="bi bi-box-arrow-left"></i>
+            Logout</a>
+        </li>
+      </ul>
+
     </div>
   </section>
 
@@ -372,6 +376,8 @@
 
     <p class="text-center mt-5">Copyright - 2024. Todos os direitos reservados.</p>
   </div>
+
+<!--Seções de compras e carrinho-->
 
   <div class=" modal-full animated fadeIn hidden" id="modalCarrinho">
 

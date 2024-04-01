@@ -14,10 +14,12 @@
 :root {
     --color-background: #fffdf7;
     --color-black: #242424;
-    --color-purple-700: #40B59F;
+    --color-purple-700: #754ef0;
     --color-red-danger-700: #fb3026;
     --color-red-danger-900: #b4322b;
     --color-white: #ffffff;
+    --color-azul-500: #2d2542;
+    --color-azul-800: #0b051f;
 }
 
 .hidden {
@@ -33,8 +35,8 @@ body {
     justify-content: center;
     background-image: linear-gradient(
         45deg,
-        var(--color-purple-700),
-        var(--color-white)
+        var(--color-azul-800),
+        var(--color-azul-500)
     );
 
 }
