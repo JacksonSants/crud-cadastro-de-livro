@@ -94,8 +94,9 @@ function contentBook() {
   // Limpar o conteúdo atual para evitar duplicatas
   cardLibrary.innerHTML = "";
 
-  // Obter os dados dos livros do Firestore
+  // Obter os dados dos livros do Firestore, limitando a 5 resultados
   livrosRef
+    .limit(5) // Limitar a exibição a 5 livros
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {

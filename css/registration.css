@@ -165,7 +165,8 @@ body {
 .container .form .form-box .form-input .input-box input {
     background: transparent;
     border: none;
-    border-bottom: .5px solid var(--color-black);
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-black)!important;
     box-shadow: none;
 }
 

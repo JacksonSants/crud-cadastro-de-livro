@@ -98,9 +98,15 @@ function contentPerfil() {
                 const userData = doc.data();
                 const cardUser = `
                 <div class="container d-flex flex-column justify-content-center">
-                    <div class="profile d-flex justify-content-center">
-                        <img src="livro/perfil.png" alt="Perfil do usuário">
+                    <div class="profile d-flex justify-content-center mb-3 mt-4">
+                        <img src="${userData.photouser}" alt="Perfil do usuário">
                     </div>
+                    <div class="user-daods-phot0">
+                        <input type="file" class="form-control user-photo" id="user-photo" required placeholder="Adicionar foto">
+                        <p>Adicione sua foto de perfil</p>
+                    </div>
+
+
                     <h2 class="text-center">${userData.user}</h2>
                     <h3 class="text-center">${user.email}</h3>
                 </div>`;
@@ -112,6 +118,9 @@ function contentPerfil() {
                     <div class="profile d-flex justify-content-center">
                         <img src="livro/perfil.jpg" alt="user profile">
                     </div>
+
+                    
+
                     <h2 class="text-center">${user.displayName}</h2>
                     <h3 class="text-center">${user.email}</h3>
                 </div>`;

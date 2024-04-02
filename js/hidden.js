@@ -1,7 +1,6 @@
 document.addEventListener(`DOMContentLoaded`, function() {
-    contentBook();
-    homeBook();
-    verificarAutenticacao()
+    books();
+    verificarAutenticacao();
     
 });
 
@@ -20,10 +19,9 @@ function entrarConta() {
     register.classList.add('hidden');
 }
 
-function homeBook() {
-    let home = document.getElementById('home-book');
-    let register = document.getElementById('register-book');
-    let footer = document.getElementById('footer');
+function books() {
+    let home = document.getElementById('books');
+    /*let register = document.getElementById('register-book');*/
     let list = document.getElementById('list-book');
     let perfil = document.getElementById('perfil');
     let banner = document.getElementById('banner');
@@ -31,17 +29,17 @@ function homeBook() {
     let rodape = document.getElementById('rodape');
 
     home.classList.remove('hidden');
-    register.classList.add('hidden');
-    footer.classList.remove('hidden');
+    /*register.classList.add('hidden');*/
     list.classList.add('hidden');
     perfil.classList.add('hidden');
     servico.classList.remove('hidden');
     banner.classList.remove('hidden');
     rodape.classList.remove('hidden');
+    contentBook();
 }
 
 function registerBook() {
-    let home = document.getElementById('home-book');
+    let home = document.getElementById('books');
     let register = document.getElementById('register-book');
     let list = document.getElementById('list-book');
     let perfil = document.getElementById('perfil');
@@ -50,7 +48,6 @@ function registerBook() {
 
     home.classList.add('hidden');
     register.classList.remove('hidden');
-    footer.classList.add('hidden');
     list.classList.add('hidden');
     perfil.classList.add('hidden');
     servico.classList.add('hidden');
@@ -60,9 +57,8 @@ function registerBook() {
 function listBook() {
     let perfil = document.getElementById('perfil');
     let list = document.getElementById('list-book');
-    let home = document.getElementById('home-book');
+    let home = document.getElementById('books');
     let register = document.getElementById('register-book');
-    let footer = document.getElementById('footer');
     let banner = document.getElementById('banner');
     let servico = document.getElementById('servico');
     
@@ -71,7 +67,6 @@ function listBook() {
     perfil.classList.add('hidden');
     home.classList.add('hidden');
     register.classList.add('hidden');
-    footer.classList.add('hidden');
     servico.classList.add('hidden');
     banner.classList.add('hidden');
     listDataLibrary();
@@ -80,9 +75,8 @@ function listBook() {
 function perfil() {
     let perfil = document.getElementById('perfil');
     let list = document.getElementById('list-book');
-    let home = document.getElementById('home-book');
-    let register = document.getElementById('register-book');
-    let footer = document.getElementById('footer');
+    let home = document.getElementById('books');
+    /*let register = document.getElementById('register-book');*/
     let banner = document.getElementById('banner');
     let rodape = document.getElementById('rodape');
     let servico = document.getElementById('servico');
@@ -90,8 +84,7 @@ function perfil() {
     perfil.classList.remove('hidden');
     list.classList.add('hidden');
     home.classList.add('hidden');
-    register.classList.add('hidden');
-    footer.classList.add('hidden');
+    /*register.classList.add('hidden');*/
     rodape.classList.add('hidden');
     banner.classList.add('hidden');
     servico.classList.add('hidden');

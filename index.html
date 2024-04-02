@@ -31,20 +31,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-              <li class="nav-item" onclick="homeBook()">
-                <a class="nav-link active" aria-current="page"><i class="bi bi-house-door-fill"></i> Home</a>
+              <li class="nav-item" onclick="books()">
+                <a class="nav-link active" aria-current="page" href="index.html" target="_self"><i
+                    class="bi bi-house-door-fill"></i> Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page"><i class="bi bi-bag-fill"></i>
-                  Comprar</a>
+                <a class="nav-link active" aria-current="page" href="loja.html" target="_self"><i
+                    class="bi bi-bag-fill"></i>
+                  Loja</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page"> Meu lvros</a>
+                <a class="nav-link active" aria-current="page" href="index.html" target="_self"><i
+                    class="bi bi-bookmarks-fill"></i> Minha biblioteca</a>
               </li>
 
-              <li class="nav-item dropdown">
+              <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false"><i class="bi bi-book-fill"></i>
                   Livro
@@ -55,7 +58,7 @@
                   <li><a class="dropdown-item" onclick="listBook()">Listar livros</a></li>
                   <li>
                 </ul>
-              </li>
+              </li>-->
 
             </ul>
 
@@ -65,9 +68,11 @@
                 <button class="  btn btn-outline-success" type="submit">Search</button>
               </form>
 
-              <ul class="navbar-nav profile me-auto mb-2 mb-lg-0 ml-3">
-                <li class="nav-item" onclick="perfil()">
-                  <a class="nav-link active" aria-current="page"><i class="bi bi-person-fill"></i>Perfil</a>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-3">
+                <li class=" profile nav-item" onclick="perfil()">
+                  <a class="nav-link active" aria-current="page">
+                    <img src="img/profile.png" alt="photo profile">
+                  </a>
                 </li>
               </ul>
             </div>
@@ -130,7 +135,7 @@
   </section>
 
 
-  <section class="home mt-5" id="home-book">
+  <section class="home mt-5" id="books">
     <div class="container ">
       <div class="text-title mt-5">
         <h1 class="wow fadeInLeft"><b>Livros em destaque</b>
@@ -181,7 +186,7 @@
   </section>
 
 
-  <section class="register-library hidden" id="register-book">
+  <!--<section class="register-library hidden" id="register-book">
     <div class="container ">
       <div class="row">
         <div class="col mt-5">
@@ -245,7 +250,7 @@
 
       </div>
     </div>
-  </section>
+  </section>-->
 
   <section class="list-library hidden" id="list-book">
     <div class="container ">
@@ -285,7 +290,7 @@
 
       </div>
 
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mt-5">
 
         <li class="nav-item nav-bottom">
           <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-card-list"></i> Histórico</a>
@@ -318,44 +323,24 @@
   </section>
 
   <!--Rodapé-->
-  <div class="container mt-3" id="footer">
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-    </footer>
-  </div>
 
   <div class="container container-rodape mt-5" id="rodape">
     <footer class="footer">
       <div class="footer-rodape d-flex">
         <div class="footer-menu d-flex flex-column">
           <a href="" class="pb-5"><b>Menu</b></a>
-          <a href="">Home</a>
-          <a href="">Course</a>
-          <a href="">Blog</a>
-          <a href="">Login</a>
+          <a href=""><i class="bi bi-house-door-fill"></i> Home</a>
+          <a href=""><i class="bi bi-card-heading"></i> Course</a>
+          <a href=""><i class="bi bi-highlighter"></i> Blog</a>
+          <a href=""><i class="bi bi-box-arrow-in-right"></i> Login</a>
         </div>
 
         <div class="footer-menu d-flex flex-column">
           <a href="" class="pb-5"><b>Redes</b></a>
-          <a href="">Youtube</a>
-          <a href="">Facebook</a>
-          <a href="">Instagram</a>
-          <a href="">Twiter</a>
+          <a href=""><i class="bi bi-youtube"></i> Youtube</a>
+          <a href=""><i class="bi bi-facebook"></i> Facebook</a>
+          <a href=""><i class="bi bi-instagram"></i> Instagram</a>
+          <a href=""><i class="bi bi-twitter-x"></i> Twiter</a>
         </div>
 
         <div class=" footer-menu footer-bar d-flex flex-column">
@@ -375,238 +360,6 @@
     </footer>
 
     <p class="text-center mt-5">Copyright - 2024. Todos os direitos reservados.</p>
-  </div>
-
-<!--Seções de compras e carrinho-->
-
-  <div class=" modal-full animated fadeIn hidden" id="modalCarrinho">
-
-    <div class="m-header hidden">
-      <div class="container">
-        <a class="btn btn-white btn-sm float-right">
-          Histórico
-        </a>
-
-        <a class="btn btn-white btn-sm float-right">
-          Fechar
-        </a>
-        <div class="etapas">
-          <div class="etapa etapa1 active">1</div>
-          <div class="etapa etapa2">2</div>
-          <div class="etapa etapa3">3</div>
-        </div>
-        <p class="title-carrinho mt-4">
-          <b id="lblTituloEtapa">Seu carrinho:</b>
-        </p>
-      </div>
-    </div>
-
-    <div class="m-body hidden">
-      <div class="container">
-
-        <div id="itensCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
-
-        </div>
-
-        <div id="localEntrega" class="row mr-0 ml-0 animated fadeIn hidden">
-
-          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
-            <div class="form-group container-cep">
-              <label>CEP:</label>
-              <input id="txtCEP" type="text" class="form-control" placeholder="CEP..." />
-              <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()">
-                <i class="fa fa-search"></i>
-              </a>
-            </div>
-          </div>
-
-
-          <div class="col-8 no-mobile"></div>
-
-
-          <div class="col-12 col-lg-6 col-md-6 col-sm-12">
-            <div class="form-group">
-              <label>Rua:</label>
-              <input id="txtEndereco" type="text" class="form-control" placeholder="Rua..." />
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
-            <div class="form-group">
-              <label>Bairro:</label>
-              <input id="txtBairro" type="text" class="form-control" placeholder="Bairro..." />
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-2 col-md-2 col-sm-12">
-            <div class="form-group">
-              <label>Número:</label>
-              <input id="txtNumero" type="text" class="form-control" placeholder="Número" />
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6 col-md-6 col-sm-12">
-            <div class="form-group">
-              <label>Cidade:</label>
-              <input id="txtCidade" type="text" class="form-control" placeholder="Cidade..." />
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-4 col-md-4 col-sm-12">
-            <div class="form-group">
-              <label>Complemento:</label>
-              <input id="txtComplemento" type="text" class="form-control" placeholder="Complemento..." />
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-2 col-md-2 col-sm-12">
-            <div class="form-group">
-              <label>UF:</label>
-              <select id="ddlUf" class="form-control">
-                <option value="-1">...</option>
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="AP">AP</option>
-                <option value="AM">AM</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="DF">DF</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MA">MA</option>
-                <option value="MT">MT</option>
-                <option value="MS">MS</option>
-                <option value="MG">MG</option>
-                <option value="PA">PA</option>
-                <option value="PB">PB</option>
-                <option value="PR">PR</option>
-                <option value="PE">PE</option>
-                <option value="PI">PI</option>
-                <option value="RJ">RJ</option>
-                <option value="RN">RN</option>
-                <option value="RS">RS</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="SC">SC</option>
-                <option value="SP">SP</option>
-                <option value="SE">SE</option>
-                <option value="TO">TO</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-6 col-lg-4 col-md-4 col-sm-12">
-            <div class="form-group">
-              <label>Nome do cliente:</label>
-              <input id="txtName" type="text" class="form-control" placeholder="Nome..." />
-            </div>
-          </div>
-
-
-        </div>
-
-        <div id="resumoCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
-          <div class="col-12">
-            <p class="title-carrinho mt-4">
-              <b>Itens do pedido:</b>
-            </p>
-          </div>
-
-          <div class="col-12">
-            <div class="row" id="listaItensResumo">
-
-            </div>
-          </div>
-
-          <div class="col-12">
-            <p class="title-carrinho mt-4">
-              <b>Local da entrega:</b>
-            </p>
-          </div>
-
-          <div class="col-12 item-carrinho resumo">
-            <div class="img-map">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div class="dados-produto">
-              <p class="texto-endereco">
-                <b id="resumoEndereco"></b>
-              </p>
-              <p class="cidade-endereco" id="cidadeEndereco"></p>
-            </div>
-          </div>
-
-        </div>
-
-        <div id="historicoCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
-          <div class="col-12">
-            <p class="title-carrinho mt-4">
-              <b>Itens do pedido:</b>
-            </p>
-          </div>
-
-          <div class="col-12">
-            <div class="row" id="listaItensResumo">
-
-            </div>
-          </div>
-
-          <div class="col-12">
-            <p class="title-carrinho mt-4">
-              <b>Local da entrega:</b>
-            </p>
-          </div>
-
-          <div class="col-12 item-carrinho resumo">
-            <div class="img-map">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div class="dados-produto">
-              <p class="texto-endereco">
-                <b id="resumoEndereco"></b>
-              </p>
-              <p class="cidade-endereco" id="cidadeEndereco"></p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="m-footer hidden">
-      <div class="container">
-        <div class="container-total text-right mb-4">
-          <p class="mb-0">
-            <span>Subtotal:</span>
-            <span id="lblSubTotal">R$ 0,00</span>
-          </p>
-          <p class="mb-0 texto-entrega">
-            <span><i class="fas fa-motorcycle"></i> Entrega:</span>
-            <span id="lblValorEntrega">+ R$ 0,00</span>
-          </p>
-          <p class="mb-0 texto-total">
-            <span><b>Total:</b></span>
-            <span class="valor-total"><b id="lblValorTotal">R$ 0,00</b></span>
-          </p>
-        </div>
-
-        <a class="btn btn-yellow float-right" id="btnEtapaPedido">
-          Continuar
-        </a>
-        <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
-          Revisar pedido
-        </a>
-        <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank">
-          Enviar pedido
-        </a>
-
-        <a class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
-          Voltar
-        </a>
-
-      </div>
-    </div>
   </div>
 
 

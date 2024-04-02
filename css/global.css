@@ -93,12 +93,12 @@ b {
 }
 
 
-.container-fluid .search-fluid a {
+.container-fluid .search-fluid  a {
     background-color: var(--color-violet-200);
 }
 
-.search-fluid .profile a {
-    background-color: var(--color-black);
+.container-fluid .search-fluid  .profile a{
+    background-color: transparent;
 }
 
 /*Seção de banner*/
@@ -150,6 +150,14 @@ b {
     text-align: center;
     font-size: 40px;
     margin-bottom: 60px;
+    color: var(--color-white);
+}
+
+.buy .container .text-title {
+    text-align: justify;
+    margin-left: 60px;
+    font-size: 40px;
+    margin-bottom: 30px;
     color: var(--color-white);
 }
 
@@ -223,12 +231,50 @@ b {
 
 
 /*perfil*/
+.container .container .profile img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.container .user-daods-phot0 {
+    position: relative;
+    top: -50px;
+    left: 50%; /* Centralizando horizontalmente */
+    transform: translateX(-50%); /* Centralizando horizontalmente */
+    width: 200px;
+}
+
+
+.container .user-daods-phot0 .user-photo {
+    border: none; /* Removendo a borda */
+    z-index: 999;
+}
+
+.container .user-daods-phot0 p{
+    color: var(--color-white);
+    text-align: center;
+}
+
+
+
 .perfil-user .container h2 {
     color: var(--color-white);
 }
 
-.perfil-user .container .navbar-nav .nav-item {
+.perfil-user .container h3 {
     color: var(--color-white);
+}
+
+.perfil-user .navbar-nav {
+    display: flex;
+    margin-left: 20%;
+}
+
+.perfil-user .navbar-nav .nav-item a{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 70%;
 }
 
 /*Fim perfil*/
