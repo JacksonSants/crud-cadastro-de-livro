@@ -139,6 +139,7 @@ b {
 }
 
 .container .banner .img-banner img{
+    margin-top: -40px;
     width: 550px;
 }
 
